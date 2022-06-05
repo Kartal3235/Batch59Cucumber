@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
@@ -30,5 +31,22 @@ public class AmazonStepDefinitions {
     @Then("sayfayi kapatir")
     public void sayfayi_kapatir() {
     Driver.closeDriver();
+    }
+
+    @Then("kullanici amazon sayfasina gider")
+    public void kullaniciAmazonSayfasinaGider() {
+        Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
+    }
+
+    @And("kullanici iphone 13 arama yapar")
+    public void kullaniciIphoneAramaYapar() {
+        amazonpage.aramaKutusu.sendKeys("iphone 13"+Keys.ENTER);
+    }
+
+    @And("sonuclarin iphone 13 icerdiğini test eder")
+    public void sonuclarinIphone13IcerdiğiniTestEder() {
+        String expectedSonuc="iphone 13";
+        String actualSonuc=amazonpage.aramaSonucElementi.getText();
+        Assert.assertTrue(actualSonuc.contains(expectedSonuc));
     }
 }
