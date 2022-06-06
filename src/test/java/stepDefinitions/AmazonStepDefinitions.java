@@ -49,4 +49,50 @@ public class AmazonStepDefinitions {
         String actualSonuc=amazonpage.aramaSonucElementi.getText();
         Assert.assertTrue(actualSonuc.contains(expectedSonuc));
     }
+    @Given("kullanici amazon anasayfasina gider")
+    public void kullanici_amazon_anasayfasina_gider() {
+    Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
+    }
+    @Then("kullanici amazonda java aratir")
+    public void kullanici_amazonda_java_aratir() {
+     amazonpage.aramaKutusu.sendKeys("Java"+Keys.ENTER);
+    }
+    @Then("sonuclarin Java icerdiğini test eder")
+    public void sonuclarin_Java_icerdiğini_test_eder() {
+    String actualSonuc=amazonpage.aramaSonucElementi.getText();
+    String expectedSonuc="Java";
+    Assert.assertTrue(actualSonuc.contains(expectedSonuc));
+    }
+
+    @Given("kullanici {string} icin arama yapar")
+    public void kullanici_icin_arama_yapar(String istenenKelime) {
+        amazonpage.aramaKutusu.sendKeys(istenenKelime+Keys.ENTER);
+    }
+    @Given("sonuclarin {string} icerdini test eder")
+    public void sonuclarin_icerdini_test_eder(String istenenKelime) {
+        String actualSonuc=amazonpage.aramaSonucElementi.getText();
+        String expectedSonuc=istenenKelime;
+        Assert.assertTrue(actualSonuc.contains(expectedSonuc));
+    }
+
+    @Given("kullanici {string} anasayfasinda")// amazonUrl
+    public void kullaniciAnasayfasinda(String istenenUrl) {
+
+        Driver.getDriver().get(ConfigReader.getProperty(istenenUrl));
+    }
+
+    @And("url'in {string} icerdiğini test eder")
+    public void urlInIcerdiğiniTestEder(String istenenKelime) {
+        String actualUrl=Driver.getDriver().getCurrentUrl();
+        Assert.assertTrue(actualUrl.contains(istenenKelime));
+    }
+
+    @Then("kullanici {int} sn bekler")
+    public void kullaniciSnBekler(int istenenSaniye) {
+        try {
+            Thread.sleep(istenenSaniye*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
