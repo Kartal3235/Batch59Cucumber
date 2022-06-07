@@ -6,11 +6,11 @@ import org.junit.runner.RunWith;
 
 
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
+@RunWith(Cucumber.class)// runner ımızı çalışır hale getiriyoruz,Junit den gelir bundan dolayı cucumberda Junit kullanırız
+@CucumberOptions(// istediğimiz bütün özelliklerimizi ekliyoruz
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags= "@parametre",
+        tags= "@hmc",
         dryRun = true
 )
 
