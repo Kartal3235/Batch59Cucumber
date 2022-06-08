@@ -5,7 +5,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.DataTablesPage;
 
-public class DataTablesstepDefinitions {
+public class DataTablesStepDefinitions {
 
     DataTablesPage dataTablespage=new DataTablesPage();
 

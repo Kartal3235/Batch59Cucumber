@@ -8,22 +8,25 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)// runner ımızı çalışır hale getiriyoruz,Junit den gelir bundan dolayı cucumberda Junit kullanırız
 @CucumberOptions(// istediğimiz bütün özelliklerimizi ekliyoruz
+        plugin = {"html:target cucumber reports .html",
+                "json:target/json-reports/cucumber.json",
+                "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags= "@hmc",
-        dryRun = true
+        tags= "@parametre",
+        dryRun = false
 )
 
-public class Runner {
+public class TestRunner {
        /*
-       Bir framework de bir tek Runner class'i yeterli olabilir
-       Runner classında class body'sinde hiç birşey olmaz
-       Runner classımızı önemli yapan iki adet annotaion vardır
+       Bir framework de bir tek TestRunner class'i yeterli olabilir
+       TestRunner classında class body'sinde hiç birşey olmaz
+       TestRunner classımızı önemli yapan iki adet annotaion vardır
 
        @RunWith(Cucumber.class)==>notasyonu runner classına calışma özlliği katar
        Bu notasyon olduğu için Cucumber framework'umuzde Junit kullanmayı tercih ediyoruz
 
-       features: Runner dosyasının feature dosyalarını nereden bulacağını tarif eder
+       features: TestRunner dosyasının feature dosyalarını nereden bulacağını tarif eder
        glue    : stepDefinitions dosyalarını nerede bulacağımızı gösterir
        tags    : o an hangi tag'i çalıştırmak istiyorsak onu belli eder.
 
