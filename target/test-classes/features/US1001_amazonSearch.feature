@@ -10,7 +10,7 @@ Feature: US1001 Kullanici Amazon Sayfasinda Arama Yapar
     And sonuclarin Nutella icerdini test eder
     And sayfayi kapatir
 
-    @iphone @ikisi
+    @iphone @ikisi @sıralı
     Scenario: TC02 kullanici amazonda iphone aratir
 
       Then kullanici amazon sayfasina gider
@@ -18,7 +18,7 @@ Feature: US1001 Kullanici Amazon Sayfasinda Arama Yapar
       And sonuclarin iphone 13 icerdiğini test eder
       And sayfayi kapatir
 
-    @java
+    @java @pr1
     Scenario: TC02 kullanici amazonda java aratir
 
       Given kullanici amazon anasayfasina gider

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="47.665">
+    <testcase classname="US1001 Kullanici ortak adimlari Background ile calistirir" name="TC05 amazon java arama" time="28.123">
+        <system-out>
+            <![CDATA[Given kullanici amazon anasayfasinda........................................passed
+And kullanici amazonda java aratir..........................................passed
+Then sonuclarin Java icerdiğini test eder...................................passed
+And sayfayi kapatir.........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US1003 kullanici parametre kullanarak arama yapabilmeli" name="TC06 kullanici parametre ile amazonda arama yapabilmeli" time="18.952">
+        <system-out>
+            <![CDATA[Given kullanici amazon anasayfasinda........................................passed
+And kullanici "Java" icin arama yapar.......................................passed
+And sonuclarin "Java" icerdini test eder....................................passed
+And sayfayi kapatir.........................................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
