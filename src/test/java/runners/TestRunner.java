@@ -8,12 +8,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)// runner ımızı çalışır hale getiriyoruz,Junit den gelir bundan dolayı cucumberda Junit kullanırız
 @CucumberOptions(// istediğimiz bütün özelliklerimizi ekliyoruz
-        plugin = {"html:target cucumber reports .html",
+
+        plugin = {"html:target/cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml"},
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags= "@parametre",
+        tags= "@baslık",
         dryRun = false
 )
 

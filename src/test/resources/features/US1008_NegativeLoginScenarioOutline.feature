@@ -1,6 +1,7 @@
 
   Feature: US1008 kullanıcı farklı yanlış ve kullanıcı adıyla giremez
 
+    @negative
     Scenario Outline:TC13 yanlı kullanıcı adı ve sifrelerle giriş yapamaz
 
       Given kullanici "HMCUrl" anasayfasinda
